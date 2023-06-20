@@ -78,7 +78,9 @@
                     }
 
                     // Set RSSI threshold to 10 dBm lower than the highest scanned RSSI
-                    $threshold = intval($rows[0]['rssi']) - 10;
+                    if ($rows) {
+                        $threshold = intval($rows[0]['rssi']) - 10;
+                    }
 
                     // Print title and 'Reserved' status and button
                     foreach ($rows as $row) {
